@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="MyStore" parallel="tests" thread-count="1">
-	<!-- <test name="login"> <classes> <class name="com.mystore.Login"></class> 
-		</classes> </test> -->
-	<!-- <test name="buy blouse">
+<test name="PlaceOrder">
 		<parameter name="testCaseID" value="1"></parameter>
-		<classes>
-			<class name="com.mystore.Login"></class>
-			<class name="com.mystore.SearchItems"></class>
-			<class name="com.mystore.ProductPage"></class>
-		</classes>
-	</test>
-
-	<test name="buy chiffon">
-		<parameter name="testCaseID" value="2"></parameter>
 		<classes>
 			<class name="com.mystore.Login"></class>
 			<class name="com.mystore.SearchItems"></class>
@@ -21,14 +10,14 @@
 			<class name="com.mystore.CheckOut"></class>
 		</classes>
 	</test>
- -->
-	<test name="Order Details">
-		<parameter name="testCaseID" value="2"></parameter>
+ 
+  <test name="ShopWomen">
+		<parameter name="testCaseID" value="5"></parameter>
 		<classes>
 			<class name="com.mystore.Login"></class>
-			<class name="com.mystore.OrderStatus"></class>
-			
+			<class name="com.mystore.ShopWomen"></class>
+			<class name="com.mystore.ProductPage"></class>
+			<class name="com.mystore.CheckOut"></class>
 		</classes>
 	</test>
-
 </suite>

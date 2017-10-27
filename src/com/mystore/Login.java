@@ -3,7 +3,7 @@ package com.mystore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.annotations.Optional;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -28,10 +28,12 @@ public class Login extends Core{
 	
 	@Test
 	@Parameters("testCaseID")
-	public void loginToSite(@Optional("2") String testCaseID) {
+	public void loginToSite(String testCaseID) throws InterruptedException {
+		PageFactory.initElements(driver, this);
 		LoginDAO logindao=new LoginDAO();
 		LoginData logindata = logindao.getLoginDetails(testCaseID);
 		signinLink.click();
+		Thread.sleep(3000);
 		emailID.sendKeys(logindata.getUserName());
 		passwd.sendKeys(logindata.getPassword());
 		submit.click();

@@ -1,7 +1,7 @@
 package com.mystore;
 
 import org.openqa.selenium.By;
-import org.testng.annotations.Optional;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -13,6 +13,7 @@ public class OrderStatus extends Core {
 	@Test
 	@Parameters("testCaseID")
 	public void orderDetails(String testCaseID) throws InterruptedException {
+		PageFactory.initElements(driver, this);
 		OrderDAO orderdao = new OrderDAO();
 		OrderData orderdata = orderdao.getOrderDetails(testCaseID);
 		driver.findElement(By.xpath("//*[@id='center_column']/div/div[1]/ul/li[1]/a/span")).click();

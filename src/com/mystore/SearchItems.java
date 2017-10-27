@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -37,7 +36,7 @@ public class SearchItems extends Core {
 
 	@Test
 	@Parameters("testCaseID")
-	public void searchItems(@Optional("2") String testCaseID) {
+	public void searchItems(String testCaseID) {
 		try {
 			PageFactory.initElements(driver, this);
 			SearchDAO searchdao = new SearchDAO();
